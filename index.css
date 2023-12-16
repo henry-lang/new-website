@@ -1,0 +1,112 @@
+:root {
+    --text: #FFEED9;
+    --light: #E0F4FF;
+    --mid: #87C4FF;
+    --dark: #39A7FF;
+
+    --title-font: 'Gloock', serif;
+    --text-font: "Space Mono";
+}
+
+body {
+    background-color: var(--text);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.name {
+    font-family: var(--title-font);
+    font-weight: 400;
+    margin: 0;
+    font-size: 120px;
+    color: var(--dark);
+}
+
+.description {
+    font-family: var(--text-font);
+    font-weight: 400;
+    color: var(--dark);
+}
+
+.waves {
+    position: absolute;
+    bottom: 0;
+    height: 40vh;
+    width: 300vw;
+}
+
+.title-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.title-container-content {
+    padding-top: 50px;
+    padding-left: 50px;
+}
+
+@keyframes waveBobbing {
+
+    0%,
+    100% {
+        transform: translateY(-1vh);
+    }
+
+    50% {
+        transform: translateY(2vw);
+    }
+}
+
+@keyframes waveAnimation {
+    0% {
+        transform: translateY(40vh);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.wave-path {
+    transform: translateY(40vh);
+    opacity: 0;
+}
+
+.wave-path-0 {
+    animation: waveAnimation 2s 0.5s forwards;
+}
+
+.wave-path-1 {
+    animation: waveAnimation 2s 1s forwards;
+}
+
+.wave-path-2 {
+
+    animation: waveAnimation 2s 1.5s forwards;
+}
+
+.wave-path-3 {
+    animation: waveAnimation 2s 2s forwards;
+}
+
+.intro {
+    background-color: var(--dark);
+}
+
+@media (max-width: 730px) {
+    .title-container-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .name {
+        font-size: 20vw;
+    }
+
+    .title-container-content {
+        text-align: center;
+    }
+}
