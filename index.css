@@ -6,6 +6,8 @@
 
     --title-font: 'Gloock', serif;
     --text-font: "Space Mono";
+
+    --bobbing-amplitude: 2vh;
 }
 
 body {
@@ -32,7 +34,7 @@ body {
 .waves {
     position: absolute;
     bottom: 0;
-    height: 40vh;
+    height: 50vh;
     width: 300vw;
 }
 
@@ -47,20 +49,18 @@ body {
 }
 
 @keyframes waveBobbing {
-
-    0%,
-    100% {
-        transform: translateY(-1vh);
+    0% {
+        transform: translateY(0);
     }
 
-    50% {
-        transform: translateY(2vw);
+    100% {
+        transform: translateY(var(--bobbing-amplitude));
     }
 }
 
 @keyframes waveAnimation {
     0% {
-        transform: translateY(40vh);
+        transform: translateY(50vh);
         opacity: 0;
     }
 
@@ -76,20 +76,19 @@ body {
 }
 
 .wave-path-0 {
-    animation: waveAnimation 2s 0.5s forwards;
+    animation: waveAnimation 2s 0.5s forwards, waveBobbing 1s 4s infinite alternate ease-in-out;
 }
 
 .wave-path-1 {
-    animation: waveAnimation 2s 1s forwards;
+    animation: waveAnimation 2s 1s forwards, waveBobbing 1s 4.5s infinite alternate ease-in-out;
 }
 
 .wave-path-2 {
-
-    animation: waveAnimation 2s 1.5s forwards;
+    animation: waveAnimation 2s 1.5s forwards, waveBobbing 1s 5s infinite alternate ease-in-out;
 }
 
 .wave-path-3 {
-    animation: waveAnimation 2s 2s forwards;
+    animation: waveAnimation 2s 2s forwards, waveBobbing 1s 5.5s infinite alternate ease-in-out;
 }
 
 .intro {
@@ -103,7 +102,7 @@ body {
     }
 
     .name {
-        font-size: 20vw;
+        font-size: 15vw;
     }
 
     .title-container-content {
